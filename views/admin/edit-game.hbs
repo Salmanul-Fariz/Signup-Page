@@ -1,0 +1,36 @@
+<section class="gameAdd">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="text-light ms-3">Edit Games</h2>
+                <form method="post" action="/admin/edit-game/{{details._id}}" enctype="multipart/form-data" class="gameFormBar mt-3">
+                    <div class="form-group gameForm">
+                        <label for="gameName">Game Name</label>
+                        <input name="gameName" type="text" class="form-control" placeholder="Enter Name" value="{{details.gameName}}" required>
+                    </div>
+                    <div class="form-group gameForm mt-4">
+                        <label for="gameTitle">Game title</label>
+                        <input name="gameTitle" type="text" class="form-control" placeholder="Enter title" value="{{details.gameTitle}}" required>
+                    </div>
+                    <div class="form-group gameForm mt-4">
+                        <img src="/images/game-img/{{details._id}}.jpg" alt="" style="width: 100px;height=auto" id="viewImage">
+                    </div>
+                    <div class="form-group gameForm mt-4">
+                        <label for="gameImage">Choose Thumbnail</label>
+                        <input name="gameImage" type="file" class="form-control" onchange="view(event)">
+                    </div>
+                    <div class="form-group gameForm mt-4">
+                        <label for="gamePrice">Game price</label>
+                        <input name="gamePrice" type="number" class="form-control" placeholder="Enter Price" value="{{details.gamePrice}}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary gameForm mt-4 w-25">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function view(event){
+        document.getElementById('viewImage').src = URL.createObjectURL(event.target.files[0])
+    }
+</script>

@@ -1,0 +1,35 @@
+<section class="viewProducts">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-end">
+                <a href="/admin/add-game" class="btn btn-success ">Add Games</a>
+            </div>
+        </div>
+        <table class="table gamesList mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col" class="viewTitle">Title</th>
+                    <th scope="col" class="viewImage">Image</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <th scope="row">{{inc @index}}</th>
+                    <td>{{this.gameName}}</td>
+                    <td class="viewTitle">{{this.gameTitle}}</td>
+                    <td class="viewImage"><img src="/images/game-img/{{this._id}}.jpg" alt="" class=" gameListImage"></td>
+                    <td>{{this.gamePrice}}</td>
+                    <td><a href="/admin/edit-game/{{this._id}}" class="btn btn-primary">Edit</a></td>
+                    <td><a href="/admin/delete-game?id={{this._id}}" onclick="return confirm('Are you want to delete {{this.gameName}} ?')" class="btn btn-danger">Delete</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>

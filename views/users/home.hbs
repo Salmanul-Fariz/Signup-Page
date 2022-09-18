@@ -1,0 +1,23 @@
+
+{{!-- main-section --}}
+<section>
+    <div class="mainSection">
+        <div class="container-fluid">
+            <div class="row">
+                {{#each data}}
+                <div class="col-sm-6 col-lg-4">
+                    <div class="bg-transparent card border-0 pb-4">
+                        <img class="card-img-top rounded" src="/images/game-img/{{this._id}}.jpg" alt="Card image cap">
+                        <div class="card-body p-0">
+                            <p class="card-text mainSectionCard-text mt-2">{{this.gameTitle}}</p>
+                            <h5 class="card-title text-light">{{this.gameName}}</h5>
+                            <h5 class="card-title mt-3 text-secondary"><i class="fa-solid fa-indian-rupee-sign pe-1"></i>{{this.gamePrice}}</h5>
+                            <a href="#" class="btn btn-primary mt-2">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

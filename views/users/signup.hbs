@@ -1,0 +1,38 @@
+<section class="signPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="text-light ms-3">Create a account</h2>
+                <form method="post" action="/signup" enctype="multipart/form-data" class="gameFormBar mt-3" id="signUp">
+                    {{#if userExist}}
+                    <div class="form-group gameForm mt-3 pb-2">
+                        <small class="text-danger">Already take Username !</small>
+                    </div>
+                    {{/if}}
+                    <div class="form-group gameForm">
+                        <label for="fullName">Full name</label>
+                        <input name="fullName" type="text" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group gameForm mt-4">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group gameForm mt-4">
+                        <label for="userName">User name</label>
+                        <input name="userName" type="text" class="form-control" placeholder="Enter your user name"
+                            required>
+                    </div>
+                    <div class="form-group gameForm mt-4">
+                        <label for="password">Password</label>
+                        <input name="password" type="password" class="form-control" placeholder="Enter password"
+                            required>
+                    </div>
+                    <div class="form-group gameForm mt-3">
+                        <a href="/login" class="loginTextLink">Already have account ?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary gameForm mt-4 w-25">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

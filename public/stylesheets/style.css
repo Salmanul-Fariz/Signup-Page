@@ -1,0 +1,92 @@
+.mainSection {
+  background: black;
+  padding: 50px 96px;
+}
+
+.navBar{
+  background: #262525;
+}
+
+.navbarButton {
+  color: white;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
+  border-radius: 10px;
+  background: transparent;
+  font-weight: 600;
+}
+
+.navbarButton:hover{
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+
+.mainSectionCard-text{
+  color: #ffffff4f;
+  font-size: 14px;
+}
+.viewProducts{
+  background: black;
+  padding: 38px 95px
+}
+
+@media (max-width: 768px) {
+  .viewProducts{
+    padding: 38px 35px,
+  }
+  .viewImage{
+    display: none;
+    padding: 38px 35px,
+  }
+}
+@media (max-width : 635px ){
+  .viewTitle{
+    display: none;
+  }
+}
+
+.gamesList{
+  color: black;
+  background-color: white;
+}
+
+.gameListImage{
+  width: 115px;
+}
+
+.gameAdd{
+  padding: 45px 0px;
+  background: black;
+}
+
+.gameFormBar{
+  padding: 35px 0;
+  background: white;
+  border-radius: 15px;
+}
+
+.gameForm{
+  margin: 0 50px;
+}
+
+.loginTextLink{
+  text-decoration: none;
+  color: #0a58cac9;
+}
+
+.loginPage{
+  padding: 102px 0px;
+  background: black;
+}
+
+.signPage{
+  padding: 70px 0px;
+  background: black;
+}
+
+.view-users{
+  background: #d1d0cf;
+  padding: 25px 25px;
+}

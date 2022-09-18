@@ -1,0 +1,30 @@
+<header>
+    <nav class="navbar navbar-light navBar">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">
+                <img src="images/Nav-Logo.png" alt="" width="30" height="24"
+                    class="h-50  d-inline-block align-text-top">
+                Epic Games
+            </a>
+            <div class="dropdown me-3">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                {{#if user}}
+                {{user.userName}}
+                </button>
+                <ul style="left: -56px; text-alighn" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                </ul>
+                {{else}}
+                Account
+                </button>
+                <ul style="left: -56px; text-alighn" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/login">Login</a></li>
+                    <li><a class="dropdown-item" href="/signup">Signup</a></li>
+                    {{!-- <li><a class="dropdown-item" href="/adLogin">Admin Page</a></li> --}}
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+</header>
