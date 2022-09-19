@@ -9,8 +9,8 @@ let userExist = false
 /* GET home page. */
 router.get('/', function (req, res, next) {
   let user = req.session.user
-  console.log(user);
   gameHelp.allGames().then((data) => {
+    console.log(user);
     res.render('users/home', { data, user });
   }).catch((err) => {
     console.log(err);

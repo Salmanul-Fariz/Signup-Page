@@ -11,7 +11,7 @@ let adminErr = null
 
 const adminSession = (req,res,next) => {
   if (req.session.adminlogin){
-    next()
+    next();
   }else{
     res.redirect('/admin')
   }
@@ -90,7 +90,6 @@ router.post('/edit-game/:id',(req,res) => {
 })
 
 router.get('/view-users',adminSession,(req,res) => {
-  console.log(req.session);
     let adminSession = req.session.admin
       gameHelp.allUsers().then((user) => {
         res.render('admin/view-users',{user,adminSession,admin:true})
@@ -99,18 +98,19 @@ router.get('/view-users',adminSession,(req,res) => {
       })
 })
 
-router.get('/delete-user',(req,res) => {
+router.get('/delete-user', adminSession,(req,res) => {
   let userId = req.query.id
   gameHelp.deleteUser(userId).then(() => {
     res.redirect('/admin')
+    console.log(req.session.user);
     req.session.user = null
-  
+    console.log(req.session.user);
   })
 })
 
 
 
-router.get('/edit-user/:id',async(req,res) => {
+router.get('/edit-user/:id',adminSession,async(req,res) => {
   let details = await gameHelp.getUserDetails(req.params.id)
   res.render('admin/edit-user',{admin:true,details})
 })
@@ -122,7 +122,7 @@ router.post('/edit-user/:id',(req,res) => {
   })
 })
 
-router.get('/adLogout', (req, res) => {
+router.get('/adLogout',adminSession, (req, res) => {
   req.session.adminlogin = false
   res.redirect('/admin')
   console.log(req.session);
