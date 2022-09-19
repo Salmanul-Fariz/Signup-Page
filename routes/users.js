@@ -6,7 +6,7 @@ const userHelp = require('../helpers/user-helpers');
 
 let userExist = false
 
-/* GET home page. */
+
 router.get('/', function (req, res, next) {
   let user = req.session.user
   gameHelp.allGames().then((data) => {

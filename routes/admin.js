@@ -5,7 +5,6 @@ const router = express.Router();
 const gameHelp = require('../helpers/game-helpers');
 const objectId = require('mongodb').ObjectId
 
-/* GET users listing. */
 
 let adminErr = null
 
@@ -107,8 +106,6 @@ router.get('/delete-user', adminSession,(req,res) => {
     console.log(req.session.user);
   })
 })
-
-
 
 router.get('/edit-user/:id',adminSession,async(req,res) => {
   let details = await gameHelp.getUserDetails(req.params.id)
