@@ -13,6 +13,11 @@ const adminRouter = require('./routes/admin');
 
 const app = express();
 
+app.use((req,res,next) => {
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  next()
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
