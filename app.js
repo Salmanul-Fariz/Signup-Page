@@ -30,6 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload())
 app.use(session({secret:'key',resave : false,saveUninitialized : false,cookie:{maxAge:600000}}))
+// app.use('/admin',session({secret:'key',resave : false,saveUninitialized : false,cookie:{maxAge:600000}}))
 
 db.connect((err) => {
   if(err){
