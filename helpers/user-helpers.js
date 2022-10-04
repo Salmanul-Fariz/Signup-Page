@@ -12,8 +12,7 @@ module.exports = {
             }
             if(!user){
                 userData.password = await bcrypt.hash(userData.password,10)
-                db.get().collection(collection.USER_COLLECTION).insertOne(userData).then((data) => {
-                    state.userExist = false
+                db.get().collection(collection.USER_COLLECTION).insertOne(userData).then(() => {
                     state.user = userData
                     resolve(state)
                 })
